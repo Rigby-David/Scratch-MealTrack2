@@ -1,3 +1,4 @@
+import { renderIngredientLi } from './utils.js';
 // import functions and grab DOM elements
 const form = document.getElementById('add-ingredient');
 const ingredientList = document.getElementById('ingredient-list');
@@ -22,7 +23,29 @@ form.addEventListener('submit', (e) => {
         measurement: data.get('measurement'),
     };
     ingredients.push(item);
+    renderIngredients();
 });
+
+remove.addEventListener('click', () => {
+    ingredients.pop();
+    renderIngredients();
+});
+
+save.addEventListener('click', () => {
+    const name = mealName.value;
+    const count = ingredients.length;
+    meals.push({ name, count});
+    
+});
+// write functions
+
+function renderIngredients() {
+    ingredientList.textContent = '';
+    for (let item of ingredients) {
+        const li = renderIngredientLi(item);
+        ingredientList.append(li);
+    }
+}
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state

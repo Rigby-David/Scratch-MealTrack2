@@ -33,9 +33,11 @@
                     </label>
                     <label>
                         Measurement:
-                        <select name="measurement" id="measurement">
+                        <select name="measurement" id="serving">
                             <option value="cups">Cups</option>
                             <option value="grams">Grams</option>
+                            <option value="ml">Milliliter</option>
+                            <option value="tsp">Teaspoons</option>
                             <option value="tbsp">Tablespoon</option>
                         </select>
                     </label>
@@ -47,6 +49,18 @@
                     <button id="remove">Remove Last Item</button>
                 </div>
             </div>
+        </section>
+        <section class="save">
+            <h3>Save Meal</h3>
+            <label>
+                Meal Name
+                <input type="text" id="meal-name">
+            </label>
+            <button id="save-meal">Save Meal</button>
+        </section>
+        <section>
+            <h2>Meals</h2>
+            <ul id="meal-list"></ul>
         </section>
     </main>
     <footer>

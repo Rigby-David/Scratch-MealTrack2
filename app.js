@@ -15,6 +15,13 @@ let meals = [];
 // set event listeners
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const data = new FormData(form);
+    const item = {
+        ingredient: data.get('ingredient'),
+        qty: data.get('qty'),
+        measurement: data.get('measurement'),
+    };
+    ingredients.push(item);
 });
   // get user input
   // use user input to update state 
